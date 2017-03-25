@@ -4,7 +4,7 @@ var slug = require('slug')
 var portfolios = {}
 
 portfolios.getPortfolios = function (req,res,next) {
-  portfolio.find({}).populate('username').then(function(err, data) {
+  portfolio.find({}).populate('creator').then(function(err, data) {
     if (err) {
       res.json(err)
     } else {
