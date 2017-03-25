@@ -5,6 +5,7 @@ let portfolioSchema = Schema({
   title: String,
   description: String,
   creator: {type: Schema.Types.ObjectId, ref: 'user'},
+  image: String,
   slug: String
 }, {
   timestamps: true

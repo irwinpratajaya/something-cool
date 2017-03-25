@@ -10,13 +10,16 @@ let userSchema = Schema({
   },
   name: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   email: {
     type: String,
     required: true,
-    validate: validators.isDate()
+    validate: validators.isEmail()
+  },
+  password: {
+    type: String,
+    required: true
   }
 
 }, {

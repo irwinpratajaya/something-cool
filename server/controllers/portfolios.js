@@ -28,6 +28,7 @@ portfolios.createPortfolio = function (req,res,next) {
     title: req.body.title,
     description: req.body.email,
     creator: req.body.creator,
+    image: req.body.image,
     slug: slug(req.body.title).toLowerCase()
   }).then (function (data) {
     res.json(data)
