@@ -1,31 +1,19 @@
 <template lang="html">
   <div class="">
-    <p>{{ title }}</p>
-    <header></header>
+    <judul></judul>
     <banner></banner>
-    <content></content>
-    <footer></footer>
+    <konten v-bind:portfolio="portfolio" v-on:loaded="getData"></konten>
+    <foot></foot>
 
-    <!-- <h2>ONLINE PORTFOLIO</h2>
-    <question-post></question-post>
-    <table class="table" id="stackoverflow">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Votes</th>
-        </tr>
-      </thead>
-      <question-list v-bind:questions="questions" v-on:loaded="getData"></question-list>
-    </table> -->
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import Header from './Header';
+import Judul from './Judul';
 import Banner from './Banner';
-import Content from './Content';
-import Footer from './Footer';
+import konten from './konten';
+import Foot from './Foot';
 
 
 export default {
@@ -33,31 +21,31 @@ export default {
   data() {
     return {
       title: 'ONLINE PORTFOLIO',
-      content: ''
+      portfolio: ''
     }
   },
   components: {
-    Header,
+    Judul,
     Banner,
-    Content,
-    Footer
+    konten,
+    Foot
   },
   methods: {
     getData() {
       var self = this;
       axios.get('http://localhost:3000/')
         .then(function (response) {
-          // console.log(response.data);
-          self.content = response.data
+          console.log(response.data);
+          self.portfolio = response.data
         })
         .catch(function (error) {
           console.log(error)
         })
     }
+  },
+  mounted() {
+    this.getData()
   }
-  // mounted() {
-  //   this.getData()
-  // }
 }
 </script>
 

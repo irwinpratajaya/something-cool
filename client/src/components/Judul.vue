@@ -1,7 +1,7 @@
 <template lang="html">
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <img src="http://aarzoointeriors.com/images/portfolio-text.png" alt="" id="logo-container" href="#" class="brand-logo">
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
       </ul>
@@ -15,9 +15,15 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
 }
 </script>
 
 <style lang="css">
+img{
+  width: 50%;
+  text-align: center;
+}
 </style>
